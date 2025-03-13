@@ -66,7 +66,7 @@ def get_weather(location, date=None):
     raise InvalidUsage(f"No forecast available for the givenn date: {date}", status_code=404)
 
 
-def extract_weather_info(weather_data, full_weather_data, forecast):
+def get_weather_info(weather_data, full_weather_data, forecast):
     temp = weather_data.get("temp", 0)
     condition = weather_data.get("conditions", "unknown")
     precip = weather_data.get("precip", 0)
@@ -82,7 +82,7 @@ def extract_weather_info(weather_data, full_weather_data, forecast):
 
 
 def get_outfit_recommendations(weather_data, forecast=False, full_weather_data=None):
-    weather_info = extract_weather_info(weather_data, full_weather_data, forecast)
+    weather_info = get_weather_info(weather_data, full_weather_data, forecast)
 
     prompt = f"Based on this weather information: {weather_info}\n"
     prompt += "Please provide outfit recommendations for this weather. Include suggestions for:"
