@@ -152,7 +152,7 @@ def handle_invalid_usage(error):
 
 @app.route("/")
 def home_page():
-    return render_template("Weather_back_page.html")
+    return "<p><h2>KMA L2 Weather API.</h2></p>"
 
 
 @app.route("/weather/api/v1/current", methods=["POST"])
