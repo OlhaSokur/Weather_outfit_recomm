@@ -114,7 +114,7 @@ def get_outfit_recommendations(weather_data, forecast=False, full_weather_data=N
 
 
 def get_activity_recommendations(weather_data, forecast=False, full_weather_data=None):
-    weather_info = extract_weather_info(weather_data, full_weather_data, forecast)
+    weather_info = get_weather_info(weather_data, full_weather_data, forecast)
 
     prompt = (f"Based on this weather information: {weather_info}\n"
               "Please recommend activities or places to visit (like parks, museums, outdoor events) based on the weather conditions. "
